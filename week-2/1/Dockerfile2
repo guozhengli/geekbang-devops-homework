@@ -1,0 +1,9 @@
+FROM golang:1.17 as b
+WORKDIR /opt/app
+COPY . .
+RUN go build -o example 
+
+FROM debian:11
+WORKDIR /opt/app
+COPY --from=b /opt/app/example ./example
+CMD ["/opt/app/example"]
