@@ -1,0 +1,49 @@
+DB:
+  DB_USER: postgres
+  DB_PASS: postgres
+  DB_HOST: db-pgpool
+  DB_NAME: postgres
+
+REDIS:
+  HOST: redis-master
+
+OPTION:
+  OPTION_A: "INFOQ"
+  OPTION_B: "GeekBang"
+
+RESULT:
+  IMAGE: lyzhang1999/result
+  TAG: env
+
+VOTE:
+  IMAGE: lyzhang1999/vote
+  TAG: env
+
+WORKER:
+  IMAGE: lyzhang1999/worker
+  TAG: env
+
+# 覆写子 chart 的默认值
+redis:
+  enabled: true
+  fullnameOverride: redis
+  auth:
+    enabled: false
+
+postgresql-ha:
+  enabled: true
+  fullnameOverride: db
+  global:
+    postgresql:
+      username: postgres
+      password: postgres
+      database: postgres
+      repmgrUsername: postgres
+      repmgrPassword: postgres
+
+IMAGEPULL:
+  AUTHS:
+    harobr.xx.com:
+      auth: YWRtaW46SGFyYm9yMTIzNDU=
+      password: Harbor12345
+      username: admin
