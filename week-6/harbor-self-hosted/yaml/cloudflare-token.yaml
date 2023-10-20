@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cloudflare-api-token-secret
+  namespace: harbor
+type: Opaque
+stringData:
+  api-token: "4X6WtUL9U-drCyp0h6yYHXV7FFbsxWkvxy_h3Xd-"

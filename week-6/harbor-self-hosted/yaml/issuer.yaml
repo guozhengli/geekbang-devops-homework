@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: harbor-issuer
+  namespace: harbor
+spec:
+  acme:
+    email: wangwei27494731@gmail.com
+    privateKeySecretRef:
+      name: gitlab-acme-key
+    # TODO CHANGE TO PRODUCTION
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # server: https://acme-staging-v02.api.letsencrypt.org/directory
+    solvers:
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cloudflare-api-token-secret
+              key: api-token
