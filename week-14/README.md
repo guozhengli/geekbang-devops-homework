@@ -43,9 +43,6 @@
         ![Alt text](image-1.png)
 
     - 登陆 GitHub配置webhook
-
-        ![](assets/17022123896128.jpg)
-
     - 提交iac代码触发构建，创建新集群
 
         ![Alt text](image-2.png)
@@ -85,7 +82,6 @@
         ![](assets/17021846111130.jpg)
 
     - 给每个集群添加 label use=prod，等待自动部署 bookinfo 完成
-        ![](assets/17021859251055.jpg)
 
     - 部署 ingress + HAProxy 实现流量负载均衡 (加权轮询)，自动故障转移
 
@@ -237,6 +233,8 @@
 ![argocd](image-7.png)
 
 ![argocd](image-8.png)
+
+![argocd](image-9.png)
 
 ![argocd](image-6.png)
 
